@@ -53,6 +53,7 @@ public class Libretto {
 		return nuovo;
 	}
 	
+	
 	public String toString() {
 		String s="";
 		for(Voto v: this.voti) {
