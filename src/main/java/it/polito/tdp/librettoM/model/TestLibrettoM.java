@@ -14,16 +14,32 @@ public class TestLibrettoM {
 		Voto v3=new Voto("Fisica I",29, LocalDate.of(2020, 6, 14));
 		lib.add(v1);
 		lib.add(v2);
-		lib.add(v3);
 		
-		//r1
+		//r1, r6
 		System.out.println(this.lib);
+		
+		if(lib.add(v3)==false)
+			System.out.println("Errore inserimento");
+	
 		
 		//r2
 		System.out.println(this.lib.stampaVotiUguali(25)); //qui stampo solo la striga
 		
-		System.out.println(this.lib.estraiVotiUguali(25)); //qui creo un libretto nuovo e lo stampo
+		System.out.println(this.lib.estraiVotiUguali(25));//qui creo un libretto nuovo e lo stampo
 		
+		//r3 
+		String nomeC="Analisi II";
+		Voto voto=lib.cercaNomeCorso(nomeC);
+		
+		System.out.println("il voto di"+nomeC+"è "+voto.getVotoCorso());
+		
+		//r4, r5 
+		
+		Voto economia2=new Voto("Economia", 24, LocalDate.now());
+		Voto economia3=new Voto("Economia", 22, LocalDate.now());
+		
+		System.out.println("Economia con 24 è conflitto: "+lib.isConflitto(economia2)+" / duplicato: "+ 
+		lib.isDuplicato(economia2));
 	}
 	
 	
