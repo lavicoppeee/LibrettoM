@@ -27,6 +27,17 @@ public class Voto {
 		this.data = data;
 	}
 
+	/**
+	 * Copy constructor di {@link Voto}: crea un nuovo voto, copianod i paramentri del voto precedente
+	 * @param v il voto da copiare
+	 */
+	public Voto(Voto v) {
+		this.nomeCorso=v.nomeCorso;  
+		this.votoCorso=v.votoCorso;
+		this.data=v.data;
+		
+	}
+	
 	public String getNomeCorso() {
 		return nomeCorso;
 	}
@@ -72,9 +83,15 @@ public class Voto {
 			return false;
 		return true;
 	}
-	
-	
 
+	public void setVotoCorso(int votoCorso) {
+		this.votoCorso = votoCorso;
+	}
+	
+	public Voto clone() {
+		Voto v=new Voto(this.nomeCorso,this.votoCorso,this.data);
+		return v; 
+	}
 	
 	
 	

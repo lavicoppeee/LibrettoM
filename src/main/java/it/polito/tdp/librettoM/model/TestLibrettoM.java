@@ -40,6 +40,39 @@ public class TestLibrettoM {
 		
 		System.out.println("Economia con 24 è conflitto: "+lib.isConflitto(economia2)+" / duplicato: "+ 
 		lib.isDuplicato(economia2));
+		
+		//r7 miglior libretto
+		
+		Libretto migl=lib.creaLibrettoMigliorato();
+		System.out.println("Miglioramento del libretto");
+		System.out.println(lib);
+		System.out.println(migl);
+		
+		
+		//r8 stampe con ordine 
+		
+		Libretto alfa=new Libretto(lib);
+		alfa.ordinaPerNomeCorso();
+		
+		System.out.println("Ordinato per nome dei corsi: \n"+ alfa+"\n");
+		
+		Libretto decre=new Libretto(lib);
+		decre.ordinaPerVotoCorso();
+		
+		System.out.println("Ordinato per voto dei corsi: \n"+ decre +"\n");
+		
+		//r9 elimina voti bassi
+		
+		lib.add(new Voto("Chimica", 19, LocalDate.now()));
+		
+		lib.ordinaPerNomeCorso();
+		System.out.println("Nuovo libretto: \n"+lib);
+		
+		lib.cancellaVoti();
+		System.out.println("Nuovo libretto senza voti <24: \n"+lib);
+	
+		
+		
 	}
 	
 	
